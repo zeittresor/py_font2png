@@ -16,3 +16,7 @@ If you want to use the effects to be added by the generation process keep in min
 generation process might take some time because parallel calculations of fractal effect with
 transparent alphachannel combined with other effects forces some processingpower (in that
 case just wait, its telling you after the process is done.
+
+Note: Make sure to reduce the slider of "color fill" if you want to see choosen the effects.
+
+Source: https://github.com/zeittresor/py_font2png
