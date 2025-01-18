@@ -1,7 +1,7 @@
 # py_font2png
 Convert any TTF font to a graphical font as PNG images with effects..
 
-![grafik](https://github.com/user-attachments/assets/fd1189a6-837c-4d67-9d26-297d0cffafe7)
+![grafik](https://github.com/user-attachments/assets/35a58028-d966-431d-afe9-58582b0ba18f)
 
 Using this script you can copy all your System Fonts to a folder called fonts in the same
 directory where the script is working, after that choose a font from that folder.
