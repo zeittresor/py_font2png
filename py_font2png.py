@@ -1,4 +1,4 @@
-# Source by gitbub.com/zeittresor
+# Source by github.com/zeittresor
 import tkinter as tk
 from tkinter import filedialog, messagebox, colorchooser
 import os, time, random, shutil, math
