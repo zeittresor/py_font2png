@@ -1,4 +1,4 @@
-# Source by github.com/zeittresor
+# Source by gitbub.com/zeittresor
 import tkinter as tk
 from tkinter import filedialog, messagebox, colorchooser
 import os, time, random, shutil, math
@@ -274,6 +274,7 @@ def generate_images():
             if size_val % 2 == 0:
                 size_val += 1
             expanded_mask = mask_img.filter(ImageFilter.MaxFilter(size_val))
+            from PIL import ImageMath
             ring = ImageMath.eval("convert(a - b, 'L')", a=expanded_mask, b=mask_img)
             outline_layer = Image.new("RGBA", (square_size, square_size), color_outline + (255,))
             letter_img = Image.composite(outline_layer, letter_img, ring)
@@ -294,6 +295,16 @@ def generate_images():
             letter_img.convert("RGB").save(os.path.join(output_dir, filename))
         top.destroy()
     messagebox.showinfo("Done", "All images saved in 'images' folder.")
+
+def open_output_folder():
+    output_dir = os.path.join(os.path.dirname(__file__), "images")
+    if os.path.exists(output_dir):
+        try:
+            os.startfile(output_dir)
+        except:
+            messagebox.showerror("Error", "Could not open folder.")
+    else:
+        messagebox.showerror("Error", "No images folder found.")
 
 btn_copyfonts = tk.Button(root, text="Copy System Fonts", command=copy_system_fonts)
 btn_copyfonts.pack(pady=5)
@@ -384,7 +395,11 @@ btn_fill_color.grid(row=6, column=2, padx=10)
 ToolTip(btn_fill_color, "Choose the fill color if Color Fill is checked")
 
 btn_generate = tk.Button(root, text="Generate", command=generate_images)
-btn_generate.pack(pady=10)
+btn_generate.pack(pady=5)
 ToolTip(btn_generate, "Generate PNG images for each character in full screen")
+
+btn_open_output = tk.Button(root, text="Open Output", command=lambda: open_output_folder())
+btn_open_output.pack(pady=5)
+ToolTip(btn_open_output, "Open the 'images' folder in the file explorer")
 
 root.mainloop()
