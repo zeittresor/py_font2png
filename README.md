@@ -17,6 +17,6 @@ generation process might take some time because parallel calculations of fractal
 transparent alphachannel combined with other effects forces some processingpower (in that
 case just wait, its telling you after the process is done.
 
-Note: Make sure to reduce the slider of "color fill" if you want to see choosen the effects.
+Note: Make sure to reduce the slider of "color fill" if you want to see the choosen effects.
 
 Source: https://github.com/zeittresor/py_font2png
